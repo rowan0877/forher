@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: url('images/download.jpeg');
+    background: url('https://github.com/rowan0877/forher/raw/main/WEBSITEEE/images/download.jpeg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -16,7 +16,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
-    padding: 10px; /* Ensure space on smaller screens */
+    padding: 10px;
 }
 
 .initial-message {
