@@ -1,0 +1,121 @@
+/* Base styles for mobile-first */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('images/download.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 10px; /* Ensure space on smaller screens */
+}
+
+.initial-message {
+    font-size: 8vw; /* Mobile-friendly, large enough text */
+    font-weight: bold;
+    opacity: 1;
+    transition: opacity 2s ease;
+}
+
+#response {
+    font-size: 8vw; /* Mobile-friendly, large enough text */
+    font-weight: bold;
+    opacity: 0;
+    color: #fffcf9;
+    transition: opacity 2s ease;
+}
+
+button {
+    padding: 15px 30px;
+    background: #ff58a3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 6vw; /* Button size fits smaller screens */
+    margin-top: 20px;
+    min-width: 180px; /* Ensure buttons aren't too small */
+}
+
+button:hover {
+    background: #e14e7a;
+}
+
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+    z-index: 1000;
+}
+
+.confetti-piece {
+    position: absolute;
+    background-color: #fffcf9;
+    opacity: 0;
+    border-radius: 50%;
+    animation: confetti-animation 4s linear infinite;
+}
+
+@keyframes confetti-animation {
+    0% {
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: translateY(200px) rotate(180deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(400px) rotate(360deg);
+    }
+}
+
+/* Responsive adjustments for larger mobile screens and tablets */
+@media (min-width: 600px) {
+    .initial-message, #response {
+        font-size: 7vw; /* Slightly smaller for medium screens */
+    }
+
+    button {
+        font-size: 5vw; /* Adjust button size for medium screens */
+        padding: 18px 35px; /* Keep buttons slightly bigger */
+    }
+}
+
+/* For tablets and larger mobile screens */
+@media (min-width: 768px) {
+    .initial-message, #response {
+        font-size: 6vw; /* Adjust font size for larger screens */
+    }
+
+    button {
+        font-size: 4vw; /* Smaller button size */
+        padding: 20px 40px; /* Slightly larger buttons */
+    }
+}
+
+/* For even larger screens (like small desktops or big tablets) */
+@media (min-width: 1024px) {
+    .initial-message, #response {
+        font-size: 5vw; /* Reduce font size for large screens */
+    }
+
+    button {
+        font-size: 3vw; /* Smaller buttons for larger screens */
+        padding: 25px 45px;
+    }
+}
